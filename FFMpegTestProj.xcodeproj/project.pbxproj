@@ -29,6 +29,9 @@
 		936459342154F4FE0085B9A2 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 936459332154F4FE0085B9A2 /* libiconv.tbd */; };
 		936459362154F5080085B9A2 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 936459352154F5080085B9A2 /* libbz2.tbd */; };
 		936459382154F8CD0085B9A2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936459372154F8CD0085B9A2 /* AudioToolbox.framework */; };
+		93F52FD6215A12CC00145222 /* DecoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F52FD4215A12CC00145222 /* DecoderViewController.m */; };
+		93F52FDC215A274000145222 /* resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93F52FDB215A274000145222 /* resource.bundle */; };
+		93F52FDF215B24BA00145222 /* LivePushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F52FDE215B24BA00145222 /* LivePushViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +174,11 @@
 		936459332154F4FE0085B9A2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		936459352154F5080085B9A2 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		936459372154F8CD0085B9A2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		93F52FD3215A12CC00145222 /* DecoderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecoderViewController.h; sourceTree = "<group>"; };
+		93F52FD4215A12CC00145222 /* DecoderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecoderViewController.m; sourceTree = "<group>"; };
+		93F52FDB215A274000145222 /* resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = resource.bundle; sourceTree = "<group>"; };
+		93F52FDD215B24BA00145222 /* LivePushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LivePushViewController.h; sourceTree = "<group>"; };
+		93F52FDE215B24BA00145222 /* LivePushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LivePushViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +228,7 @@
 		936458822154F2980085B9A2 /* FFMpegTestProj */ = {
 			isa = PBXGroup;
 			children = (
+				93F52FDB215A274000145222 /* resource.bundle */,
 				936458952154F2DA0085B9A2 /* FFmpeg-iOS */,
 				936459172154F2DB0085B9A2 /* x264-iOS */,
 				936458832154F2980085B9A2 /* AppDelegate.swift */,
@@ -231,6 +240,10 @@
 				9364592E2154F3A80085B9A2 /* FFMpegTestViewController.h */,
 				9364592F2154F3A80085B9A2 /* FFMpegTestViewController.m */,
 				9364592D2154F3A80085B9A2 /* FFMpegTestProj-Bridging-Header.h */,
+				93F52FD3215A12CC00145222 /* DecoderViewController.h */,
+				93F52FD4215A12CC00145222 /* DecoderViewController.m */,
+				93F52FDD215B24BA00145222 /* LivePushViewController.h */,
+				93F52FDE215B24BA00145222 /* LivePushViewController.m */,
 			);
 			path = FFMpegTestProj;
 			sourceTree = "<group>";
@@ -543,6 +556,7 @@
 				9364588E2154F29C0085B9A2 /* LaunchScreen.storyboard in Resources */,
 				9364588B2154F29C0085B9A2 /* Assets.xcassets in Resources */,
 				936458892154F2980085B9A2 /* Main.storyboard in Resources */,
+				93F52FDC215A274000145222 /* resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,9 +567,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F52FDF215B24BA00145222 /* LivePushViewController.m in Sources */,
 				936458862154F2980085B9A2 /* ViewController.swift in Sources */,
 				936459302154F3A80085B9A2 /* FFMpegTestViewController.m in Sources */,
 				936458842154F2980085B9A2 /* AppDelegate.swift in Sources */,
+				93F52FD6215A12CC00145222 /* DecoderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

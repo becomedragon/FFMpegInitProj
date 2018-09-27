@@ -7,10 +7,6 @@
 //
 
 #import "FFMpegTestViewController.h"
-//#import "FFmpeg-iOS/include/libavutil/opt.h"
-//#import "FFmpeg-iOS/include/libavcodec/avcodec.h"
-//#import "FFmpeg-iOS/include/libavformat/avformat.h"
-//#import "FFmpeg-iOS/include/libswscale/swscale.h"
 
 #ifdef __cplusplus
 extern "C" {
