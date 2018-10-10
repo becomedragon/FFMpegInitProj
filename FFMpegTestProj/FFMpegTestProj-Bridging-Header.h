@@ -5,3 +5,5 @@
 #import "FFMpegTestViewController.h"
 #import "DecoderViewController.h"
 #import "LivePushViewController.h"
+#import "EncoderViewController.h"
+#import "Buffer2YUV.h"

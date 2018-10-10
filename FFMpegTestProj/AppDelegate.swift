@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white;
 //        let rootVC = DecoderViewController()
-        let rootVC = LivePushViewController()
+//        let rootVC = LivePushViewController()
+//        let rootVC = EncoderViewController();
+        
+        let rootVC = CaptureViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         return true

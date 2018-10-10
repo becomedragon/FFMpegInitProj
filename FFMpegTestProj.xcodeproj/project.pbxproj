@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9305C6DD21607088003FEBFB /* EncoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6DC21607088003FEBFB /* EncoderViewController.m */; };
+		9305C6E1216C929C003FEBFB /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E0216C929C003FEBFB /* CaptureViewController.swift */; };
+		9305C6E5216CB11A003FEBFB /* Buffer2YUV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E4216CB11A003FEBFB /* Buffer2YUV.m */; };
+		9305C6F7216CB365003FEBFB /* aw_array.c in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E8216CB364003FEBFB /* aw_array.c */; };
+		9305C6F9216CB365003FEBFB /* aw_file.c in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6EE216CB365003FEBFB /* aw_file.c */; };
+		9305C6FA216CB365003FEBFB /* aw_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6EF216CB365003FEBFB /* aw_alloc.c */; };
+		9305C6FB216CB365003FEBFB /* aw_dict.c in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6F1216CB365003FEBFB /* aw_dict.c */; };
+		9305C6FC216CB365003FEBFB /* aw_thread_poll.c in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6F3216CB365003FEBFB /* aw_thread_poll.c */; };
+		9305C6FD216CB365003FEBFB /* aw_data.c in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6F6216CB365003FEBFB /* aw_data.c */; };
 		936458842154F2980085B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936458832154F2980085B9A2 /* AppDelegate.swift */; };
 		936458862154F2980085B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936458852154F2980085B9A2 /* ViewController.swift */; };
 		936458892154F2980085B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936458872154F2980085B9A2 /* Main.storyboard */; };
@@ -35,6 +44,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9305C6DB21607088003FEBFB /* EncoderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncoderViewController.h; sourceTree = "<group>"; };
+		9305C6DC21607088003FEBFB /* EncoderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncoderViewController.m; sourceTree = "<group>"; };
+		9305C6E0216C929C003FEBFB /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		9305C6E3216CB11A003FEBFB /* Buffer2YUV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buffer2YUV.h; sourceTree = "<group>"; };
+		9305C6E4216CB11A003FEBFB /* Buffer2YUV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Buffer2YUV.m; sourceTree = "<group>"; };
+		9305C6E7216CB364003FEBFB /* aw_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_utils.h; sourceTree = "<group>"; };
+		9305C6E8216CB364003FEBFB /* aw_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aw_array.c; sourceTree = "<group>"; };
+		9305C6EA216CB364003FEBFB /* aw_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_file.h; sourceTree = "<group>"; };
+		9305C6EC216CB364003FEBFB /* aw_thread_poll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_thread_poll.h; sourceTree = "<group>"; };
+		9305C6ED216CB364003FEBFB /* aw_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_common.h; sourceTree = "<group>"; };
+		9305C6EE216CB365003FEBFB /* aw_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aw_file.c; sourceTree = "<group>"; };
+		9305C6EF216CB365003FEBFB /* aw_alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aw_alloc.c; sourceTree = "<group>"; };
+		9305C6F0216CB365003FEBFB /* aw_dict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_dict.h; sourceTree = "<group>"; };
+		9305C6F1216CB365003FEBFB /* aw_dict.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aw_dict.c; sourceTree = "<group>"; };
+		9305C6F2216CB365003FEBFB /* aw_alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_alloc.h; sourceTree = "<group>"; };
+		9305C6F3216CB365003FEBFB /* aw_thread_poll.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aw_thread_poll.c; sourceTree = "<group>"; };
+		9305C6F4216CB365003FEBFB /* aw_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_data.h; sourceTree = "<group>"; };
+		9305C6F5216CB365003FEBFB /* aw_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aw_array.h; sourceTree = "<group>"; };
+		9305C6F6216CB365003FEBFB /* aw_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aw_data.c; sourceTree = "<group>"; };
 		936458802154F2980085B9A2 /* FFMpegTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMpegTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936458832154F2980085B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936458852154F2980085B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +236,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9305C6E6216CB33A003FEBFB /* aw */ = {
+			isa = PBXGroup;
+			children = (
+				9305C6EF216CB365003FEBFB /* aw_alloc.c */,
+				9305C6F2216CB365003FEBFB /* aw_alloc.h */,
+				9305C6E8216CB364003FEBFB /* aw_array.c */,
+				9305C6F5216CB365003FEBFB /* aw_array.h */,
+				9305C6ED216CB364003FEBFB /* aw_common.h */,
+				9305C6F6216CB365003FEBFB /* aw_data.c */,
+				9305C6F4216CB365003FEBFB /* aw_data.h */,
+				9305C6F1216CB365003FEBFB /* aw_dict.c */,
+				9305C6F0216CB365003FEBFB /* aw_dict.h */,
+				9305C6EE216CB365003FEBFB /* aw_file.c */,
+				9305C6EA216CB364003FEBFB /* aw_file.h */,
+				9305C6F3216CB365003FEBFB /* aw_thread_poll.c */,
+				9305C6EC216CB364003FEBFB /* aw_thread_poll.h */,
+				9305C6E7216CB364003FEBFB /* aw_utils.h */,
+			);
+			path = aw;
+			sourceTree = "<group>";
+		};
 		936458772154F2980085B9A2 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +277,7 @@
 		936458822154F2980085B9A2 /* FFMpegTestProj */ = {
 			isa = PBXGroup;
 			children = (
+				9305C6E6216CB33A003FEBFB /* aw */,
 				93F52FDB215A274000145222 /* resource.bundle */,
 				936458952154F2DA0085B9A2 /* FFmpeg-iOS */,
 				936459172154F2DB0085B9A2 /* x264-iOS */,
@@ -244,6 +294,11 @@
 				93F52FD4215A12CC00145222 /* DecoderViewController.m */,
 				93F52FDD215B24BA00145222 /* LivePushViewController.h */,
 				93F52FDE215B24BA00145222 /* LivePushViewController.m */,
+				9305C6DB21607088003FEBFB /* EncoderViewController.h */,
+				9305C6DC21607088003FEBFB /* EncoderViewController.m */,
+				9305C6E0216C929C003FEBFB /* CaptureViewController.swift */,
+				9305C6E3216CB11A003FEBFB /* Buffer2YUV.h */,
+				9305C6E4216CB11A003FEBFB /* Buffer2YUV.m */,
 			);
 			path = FFMpegTestProj;
 			sourceTree = "<group>";
@@ -567,11 +622,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9305C6FD216CB365003FEBFB /* aw_data.c in Sources */,
+				9305C6FA216CB365003FEBFB /* aw_alloc.c in Sources */,
 				93F52FDF215B24BA00145222 /* LivePushViewController.m in Sources */,
 				936458862154F2980085B9A2 /* ViewController.swift in Sources */,
+				9305C6FC216CB365003FEBFB /* aw_thread_poll.c in Sources */,
+				9305C6E1216C929C003FEBFB /* CaptureViewController.swift in Sources */,
 				936459302154F3A80085B9A2 /* FFMpegTestViewController.m in Sources */,
+				9305C6F7216CB365003FEBFB /* aw_array.c in Sources */,
 				936458842154F2980085B9A2 /* AppDelegate.swift in Sources */,
 				93F52FD6215A12CC00145222 /* DecoderViewController.m in Sources */,
+				9305C6DD21607088003FEBFB /* EncoderViewController.m in Sources */,
+				9305C6F9216CB365003FEBFB /* aw_file.c in Sources */,
+				9305C6E5216CB11A003FEBFB /* Buffer2YUV.m in Sources */,
+				9305C6FB216CB365003FEBFB /* aw_dict.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
