@@ -56,9 +56,11 @@ public class Framebuffer {
         self.hash = hashForFramebufferWithProperties(orientation:orientation, size:size, textureOnly:textureOnly, minFilter:minFilter, magFilter:magFilter, wrapS:wrapS, wrapT:wrapT, internalFormat:internalFormat, format:format, type:type, stencil:stencil)
 
         if let newTexture = overriddenTexture {
+            //后面的Frame就走这个步骤
             textureOverride = true
             texture = newTexture
         } else {
+            //这个地方在摄像头刚启动的时候会被调用两次，初步认为是要创建Y Frame & UV Frame
             textureOverride = false
             texture = generateTexture(minFilter:minFilter, magFilter:magFilter, wrapS:wrapS, wrapT:wrapT)
         }

@@ -280,7 +280,8 @@ extension CaptureViewController {
         let cameraFrame = CMSampleBufferGetImageBuffer(sampleBuffer)!
         let bufferWidth = CVPixelBufferGetWidth(cameraFrame)
         let bufferHeight = CVPixelBufferGetHeight(cameraFrame)
-        let currentTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+        let currentTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)  //PTS
+        let _ = CMSampleBufferGetDecodeTimeStamp(sampleBuffer)     //DTS (useless, just note)
         
         CVPixelBufferLockBaseAddress(cameraFrame, CVPixelBufferLockFlags(rawValue:CVOptionFlags(0)))
         
@@ -290,7 +291,7 @@ extension CaptureViewController {
             
             let luminanceFramebuffer:Framebuffer     //Y frame
             let chrominanceFramebuffer:Framebuffer   //UV frame
-            if sharedImageProcessingContext.supportsTextureCaches() {
+            if sharedImageProcessingContext.supportsTextureCaches() { //Device
                 var luminanceTextureRef:CVOpenGLESTexture? = nil
                 let _ = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, sharedImageProcessingContext.coreVideoTextureCache, cameraFrame, nil, GLenum(GL_TEXTURE_2D), GL_LUMINANCE, GLsizei(bufferWidth), GLsizei(bufferHeight), GLenum(GL_LUMINANCE), GLenum(GL_UNSIGNED_BYTE), 0, &luminanceTextureRef)
                 let luminanceTexture = CVOpenGLESTextureGetName(luminanceTextureRef!)
@@ -308,7 +309,7 @@ extension CaptureViewController {
                 glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_S), GL_CLAMP_TO_EDGE)
                 glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_T), GL_CLAMP_TO_EDGE)
                 chrominanceFramebuffer = try! Framebuffer(context:sharedImageProcessingContext, orientation:ImageOrientation.portrait, size:GLSize(width:GLint(bufferWidth / 2), height:GLint(bufferHeight / 2)), textureOnly:true, overriddenTexture:chrominanceTexture)
-            } else {
+            } else {                                                    //Simulator
                 glActiveTexture(GLenum(GL_TEXTURE4))
                 luminanceFramebuffer = sharedImageProcessingContext.framebufferCache.requestFramebufferWithProperties(orientation:ImageOrientation.portrait, size:GLSize(width:GLint(bufferWidth), height:GLint(bufferHeight)), textureOnly:true)
                 luminanceFramebuffer.lock()
