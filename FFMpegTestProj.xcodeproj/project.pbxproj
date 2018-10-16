@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		894DFA79217480220094315F /* Mov2GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFA78217480220094315F /* Mov2GifViewController.swift */; };
+		894DFA7C217481DB0094315F /* GifConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFA7B217481DB0094315F /* GifConverter.swift */; };
+		894DFA7E217489090094315F /* Size+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFA7D217489090094315F /* Size+Compare.swift */; };
+		894DFA80217492750094315F /* AVURLAsset+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFA7F217492750094315F /* AVURLAsset+Property.swift */; };
 		9305C6DD21607088003FEBFB /* EncoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6DC21607088003FEBFB /* EncoderViewController.m */; };
 		9305C6E1216C929C003FEBFB /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E0216C929C003FEBFB /* CaptureViewController.swift */; };
 		9305C6E5216CB11A003FEBFB /* Buffer2YUV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E4216CB11A003FEBFB /* Buffer2YUV.m */; };
@@ -74,6 +78,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		894DFA78217480220094315F /* Mov2GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mov2GifViewController.swift; sourceTree = "<group>"; };
+		894DFA7B217481DB0094315F /* GifConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifConverter.swift; sourceTree = "<group>"; };
+		894DFA7D217489090094315F /* Size+Compare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Size+Compare.swift"; sourceTree = "<group>"; };
+		894DFA7F217492750094315F /* AVURLAsset+Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVURLAsset+Property.swift"; sourceTree = "<group>"; };
 		9305C6DB21607088003FEBFB /* EncoderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncoderViewController.h; sourceTree = "<group>"; };
 		9305C6DC21607088003FEBFB /* EncoderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncoderViewController.m; sourceTree = "<group>"; };
 		9305C6E0216C929C003FEBFB /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +304,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		894DFA7A217480270094315F /* Mov2Gif */ = {
+			isa = PBXGroup;
+			children = (
+				894DFA7B217481DB0094315F /* GifConverter.swift */,
+				894DFA7D217489090094315F /* Size+Compare.swift */,
+				894DFA7F217492750094315F /* AVURLAsset+Property.swift */,
+			);
+			path = Mov2Gif;
+			sourceTree = "<group>";
+		};
 		9305C6E6216CB33A003FEBFB /* aw */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +432,7 @@
 		936458822154F2980085B9A2 /* FFMpegTestProj */ = {
 			isa = PBXGroup;
 			children = (
+				894DFA7A217480270094315F /* Mov2Gif */,
 				9305C7AF216EF41C003FEBFB /* OpenGLES-Utils */,
 				9305C6E6216CB33A003FEBFB /* aw */,
 				93F52FDB215A274000145222 /* resource.bundle */,
@@ -437,6 +456,7 @@
 				9305C6E0216C929C003FEBFB /* CaptureViewController.swift */,
 				9305C6E3216CB11A003FEBFB /* Buffer2YUV.h */,
 				9305C6E4216CB11A003FEBFB /* Buffer2YUV.m */,
+				894DFA78217480220094315F /* Mov2GifViewController.swift */,
 			);
 			path = FFMpegTestProj;
 			sourceTree = "<group>";
@@ -771,6 +791,7 @@
 				9305C7C3216EF505003FEBFB /* OpenGLContext_Shared.swift in Sources */,
 				9305C7BF216EF505003FEBFB /* Framebuffer.swift in Sources */,
 				9305C7D0216EF66A003FEBFB /* OpenGLContext.swift in Sources */,
+				894DFA7C217481DB0094315F /* GifConverter.swift in Sources */,
 				9305C6FA216CB365003FEBFB /* aw_alloc.c in Sources */,
 				93F52FDF215B24BA00145222 /* LivePushViewController.m in Sources */,
 				936458862154F2980085B9A2 /* ViewController.swift in Sources */,
@@ -792,6 +813,7 @@
 				9305C7ED216EF887003FEBFB /* TextureSamplingOperation.swift in Sources */,
 				9305C7EA216EF887003FEBFB /* BasicOperation.swift in Sources */,
 				9305C7C8216EF505003FEBFB /* FramebufferCache.swift in Sources */,
+				894DFA80217492750094315F /* AVURLAsset+Property.swift in Sources */,
 				9305C7F8216F4ABA003FEBFB /* RenderView.swift in Sources */,
 				936458842154F2980085B9A2 /* AppDelegate.swift in Sources */,
 				9305C7D7216EF7FB003FEBFB /* Timestamp.swift in Sources */,
@@ -800,6 +822,8 @@
 				9305C6DD21607088003FEBFB /* EncoderViewController.m in Sources */,
 				9305C7D3216EF723003FEBFB /* ConvertedShaders_GLES.swift in Sources */,
 				9305C6F9216CB365003FEBFB /* aw_file.c in Sources */,
+				894DFA7E217489090094315F /* Size+Compare.swift in Sources */,
+				894DFA79217480220094315F /* Mov2GifViewController.swift in Sources */,
 				9305C7CB216EF505003FEBFB /* FillMode.swift in Sources */,
 				9305C7CE216EF57E003FEBFB /* ShaderProgram.swift in Sources */,
 				9305C6E5216CB11A003FEBFB /* Buffer2YUV.m in Sources */,

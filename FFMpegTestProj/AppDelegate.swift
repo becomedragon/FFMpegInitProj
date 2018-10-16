@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white;
 //        let rootVC = DecoderViewController()
 //        let rootVC = LivePushViewController()
-//        let rootVC = EncoderViewController();
-        
-        let rootVC = CaptureViewController()
+//        let rootVC = EncoderViewController()
+//        let rootVC = CaptureViewController()
+        let rootVC = Mov2GifViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         return true
