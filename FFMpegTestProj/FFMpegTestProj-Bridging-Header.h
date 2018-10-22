@@ -7,3 +7,5 @@
 #import "LivePushViewController.h"
 #import "EncoderViewController.h"
 #import "Buffer2YUV.h"
+#import "LocationManager.h"
+#import "Mp3Encoder.h"

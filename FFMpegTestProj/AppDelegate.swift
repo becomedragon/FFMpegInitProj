@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let rootVC = LivePushViewController()
 //        let rootVC = EncoderViewController()
 //        let rootVC = CaptureViewController()
-        let rootVC = Mov2GifViewController()
+//        let rootVC = Mov2GifViewController()
+//        let rootVC = WatermarkViewController()
+        let rootVC = Mp3EncoderViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         return true

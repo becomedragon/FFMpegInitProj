@@ -89,7 +89,8 @@ class CaptureViewController: UIViewController,ImageSource {
     func createRenderView() {
         renderView = RenderView()
         view.addSubview(renderView!)
-        renderView!.frame = UIScreen.main.bounds
+//        renderView!.frame = UIScreen.main.bounds
+        renderView!.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
         let filter = BasicOperation(fragmentShader: LuminanceFragmentShader, numberOfInputs: 1)
         self-->filter-->renderView!
