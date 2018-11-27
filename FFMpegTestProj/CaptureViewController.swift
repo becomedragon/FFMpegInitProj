@@ -42,7 +42,7 @@ class CaptureViewController: UIViewController,ImageSource {
     var switchButton:UIButton?
     
     //capture type
-    var captureAsYUV = true    //true use opengl filter , false use native filter
+    var captureAsYUV = false    //true use opengl filter , false use native filter
     var supportsFullYUVRange = false
     
     //shader program
@@ -53,6 +53,11 @@ class CaptureViewController: UIViewController,ImageSource {
     
     //opengl preview
     var renderView:RenderView?
+    
+    //temp preview
+    var temPreview:UIImageView!
+    
+    var tempImageArray = [UIImage]()
     
     func transmitPreviousImage(to target: ImageConsumer, atIndex: UInt) {
         
@@ -84,6 +89,9 @@ class CaptureViewController: UIViewController,ImageSource {
         createOutput()
         createCaptureSession()
 //        createPreviewLayer()
+        
+        temPreview = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 300))
+        view.addSubview(temPreview)
     }
     
     func createRenderView() {
@@ -107,12 +115,11 @@ class CaptureViewController: UIViewController,ImageSource {
     
     func createGLK() {
         eaglContext = EAGLContext(api: .openGLES2)
-        videoPreview = GLKView(frame: UIScreen.main.bounds, context: eaglContext!)
+        let rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * (3.0 / 4.0))
+        videoPreview = GLKView(frame: rect, context: eaglContext!)
         videoPreview?.enableSetNeedsDisplay = false
         
-//        back camera
-//        videoPreview?.transform = CGAffineTransform.init(rotationAngle: .pi / 2)
-        videoPreview?.frame = UIScreen.main.bounds
+        videoPreview?.frame = rect
         
         view.addSubview(videoPreview!)
        
@@ -120,7 +127,6 @@ class CaptureViewController: UIViewController,ImageSource {
         videoPreviewBounds = CGRect.zero
         videoPreviewBounds?.size.height = CGFloat((videoPreview?.drawableHeight)!)
         videoPreviewBounds?.size.width = CGFloat((videoPreview?.drawableWidth)!)
-        
     }
     
     func createCI() {
@@ -237,7 +243,9 @@ class CaptureViewController: UIViewController,ImageSource {
             if conn.isVideoOrientationSupported {
                 conn.videoOrientation = .portrait
             }
-            conn.isVideoMirrored = true
+            if videoInput?.device.position == .front {
+                conn.isVideoMirrored = true
+            }
         }
     }
     
@@ -261,11 +269,13 @@ extension CaptureViewController:AVCaptureVideoDataOutputSampleBufferDelegate,AVC
 
         if self.videoOutput!.isEqual(output) {
 //            let videoYUVData = Buffer2YUV.buffer2YUV(sampleBuffer)
-            if captureAsYUV {
-                openGLFilter(output, didOutput: sampleBuffer, from: connection)
-            } else {
-                nativeFilter(output, didOutput: sampleBuffer, from: connection)
-            }
+//            if captureAsYUV {
+//                openGLFilter(output, didOutput: sampleBuffer, from: connection)
+//            } else {
+//                nativeFilter(output, didOutput: sampleBuffer, from: connection)
+//            }
+            
+            resizeOutput(output, didOutput: sampleBuffer, from: connection)
             
         } else if self.audioOutput!.isEqual(output) {
             
@@ -391,6 +401,46 @@ extension CaptureViewController {
             ciContext?.draw(filteredImage!, in: videoPreviewBounds!, from: drawRect)
         }
         videoPreview?.display()
+    }
+    
+    
+    func resizeOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)  {
+        //add two filter
+        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        let sourceImage = CIImage(cvPixelBuffer:imageBuffer as! CVPixelBuffer)
+        let sourceExtent = sourceImage.extent
+       
+        let drawRect = sourceImage.extent;
+        let adjustHeight = (drawRect.size.height - drawRect.size.width * (3.0 / 4.0)) / 2.0
+        var croppedImage = sourceImage.cropped(to: CGRect(x: 0, y:adjustHeight , width: drawRect.size.width , height: drawRect.size.width * (3.0 / 4.0)))
+        
+        videoPreview?.bindDrawable()
+        
+        if eaglContext != EAGLContext.current() {
+            EAGLContext.setCurrent(eaglContext)
+        }
+        
+        //clear eagl view to gary
+        glClearColor(0.5, 0.5, 0.5, 1.0)
+        glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
+        
+        //set the blend mode to "source over" so that CI will use that
+        glEnable(GLenum(GL_BLEND))
+        glBlendFunc(GLenum(GL_ONE), GLenum(GL_ONE_MINUS_SRC_ALPHA))
+        
+        let path = NSTemporaryDirectory() + "temp2.mov"
+        if (croppedImage != nil) {
+            ciContext?.draw(croppedImage, in: videoPreviewBounds!, from:croppedImage.extent)
+        }
+        videoPreview?.display()
+        
+        let port = connection.inputPorts[0]
+        let originalClock = port.clock
+        let syncedPTS = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+        let originalPTS = CMSyncConvertTime(syncedPTS, from: (captureSession?.masterClock)!, to: originalClock!)
+        
+//        Image2Mov.shared().array.add(videoPreview?.snapshot)
+        Image2Mov.writeImage(asMovie: (videoPreview?.snapshot)!, toPath: path, size: croppedImage.extent.size, duration: 2)
     }
 }
 

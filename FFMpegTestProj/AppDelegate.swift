@@ -24,8 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let rootVC = CaptureViewController()
 //        let rootVC = Mov2GifViewController()
 //        let rootVC = WatermarkViewController()
-        let rootVC = Mp3EncoderViewController()
-        window?.rootViewController = rootVC
+//        let rootVC = Mp3EncoderViewController()
+        if #available(iOS 10.0, *) {
+            let rootVC = CameraViewController()
+            window?.rootViewController = rootVC
+        } else {
+            let rootVC = Mp3EncoderViewController()
+            window?.rootViewController = rootVC
+        }
         window?.makeKeyAndVisible()
         return true
     }

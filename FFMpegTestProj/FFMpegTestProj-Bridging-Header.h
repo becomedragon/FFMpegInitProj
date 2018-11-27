@@ -9,3 +9,4 @@
 #import "Buffer2YUV.h"
 #import "LocationManager.h"
 #import "Mp3Encoder.h"
+#import "Image2Mov.h"

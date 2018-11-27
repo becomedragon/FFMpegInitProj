@@ -68,6 +68,9 @@
 		894DFB7421798CCD0094315F /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894DFB6D21798B300094315F /* libmp3lame.a */; };
 		894DFB79217995860094315F /* demo.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 894DFB78217995860094315F /* demo.pcm */; };
 		894DFB7B217995FF0094315F /* Mp3EncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFB7A217995FF0094315F /* Mp3EncoderViewController.swift */; };
+		894DFB8C217DB6480094315F /* Image2Mov.m in Sources */ = {isa = PBXBuildFile; fileRef = 894DFB8B217DB6480094315F /* Image2Mov.m */; };
+		894DFB8F217DDE0A0094315F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFB8E217DDE0A0094315F /* CameraViewController.swift */; };
+		894DFB91217DDE150094315F /* TCCoreCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DFB90217DDE150094315F /* TCCoreCamera.swift */; };
 		9305C6DD21607088003FEBFB /* EncoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6DC21607088003FEBFB /* EncoderViewController.m */; };
 		9305C6E1216C929C003FEBFB /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E0216C929C003FEBFB /* CaptureViewController.swift */; };
 		9305C6E5216CB11A003FEBFB /* Buffer2YUV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C6E4216CB11A003FEBFB /* Buffer2YUV.m */; };
@@ -199,6 +202,10 @@
 		894DFB7221798B950094315F /* Mp3Encoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Mp3Encoder.mm; sourceTree = "<group>"; };
 		894DFB78217995860094315F /* demo.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.pcm; sourceTree = "<group>"; };
 		894DFB7A217995FF0094315F /* Mp3EncoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3EncoderViewController.swift; sourceTree = "<group>"; };
+		894DFB8A217DB6480094315F /* Image2Mov.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image2Mov.h; sourceTree = "<group>"; };
+		894DFB8B217DB6480094315F /* Image2Mov.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Image2Mov.m; sourceTree = "<group>"; };
+		894DFB8E217DDE0A0094315F /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		894DFB90217DDE150094315F /* TCCoreCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCCoreCamera.swift; sourceTree = "<group>"; };
 		9305C6DB21607088003FEBFB /* EncoderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncoderViewController.h; sourceTree = "<group>"; };
 		9305C6DC21607088003FEBFB /* EncoderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncoderViewController.m; sourceTree = "<group>"; };
 		9305C6E0216C929C003FEBFB /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -631,6 +638,23 @@
 			path = Encoder;
 			sourceTree = "<group>";
 		};
+		894DFB89217DB6350094315F /* Image2Mov */ = {
+			isa = PBXGroup;
+			children = (
+				894DFB8A217DB6480094315F /* Image2Mov.h */,
+				894DFB8B217DB6480094315F /* Image2Mov.m */,
+			);
+			path = Image2Mov;
+			sourceTree = "<group>";
+		};
+		894DFB8D217DDDDC0094315F /* CustomeCamera */ = {
+			isa = PBXGroup;
+			children = (
+				894DFB90217DDE150094315F /* TCCoreCamera.swift */,
+			);
+			path = CustomeCamera;
+			sourceTree = "<group>";
+		};
 		9305C6E6216CB33A003FEBFB /* aw */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +773,9 @@
 		936458822154F2980085B9A2 /* FFMpegTestProj */ = {
 			isa = PBXGroup;
 			children = (
+				894DFB8E217DDE0A0094315F /* CameraViewController.swift */,
+				894DFB8D217DDDDC0094315F /* CustomeCamera */,
+				894DFB89217DB6350094315F /* Image2Mov */,
 				894DFB6B21798AE20094315F /* Mp3Encoder */,
 				894DFA88217614F60094315F /* Gallery */,
 				894DFA8321760F430094315F /* VideoWatermark */,
@@ -1141,6 +1168,7 @@
 				894DFAF2217614F70094315F /* PagesController.swift in Sources */,
 				894DFAF0217614F60094315F /* PermissionView.swift in Sources */,
 				894DFB7B217995FF0094315F /* Mp3EncoderViewController.swift in Sources */,
+				894DFB8F217DDE0A0094315F /* CameraViewController.swift in Sources */,
 				894DFA87217614860094315F /* WatermarkViewController.swift in Sources */,
 				9305C7C7216EF505003FEBFB /* OpenGLRendering.swift in Sources */,
 				9305C7E9216EF887003FEBFB /* OperationGroup.swift in Sources */,
@@ -1167,6 +1195,7 @@
 				9305C7C8216EF505003FEBFB /* FramebufferCache.swift in Sources */,
 				894DFAE0217614F60094315F /* Config.swift in Sources */,
 				894DFA80217492750094315F /* AVURLAsset+Property.swift in Sources */,
+				894DFB91217DDE150094315F /* TCCoreCamera.swift in Sources */,
 				894DFACD217614F60094315F /* Cart.swift in Sources */,
 				894DFAE8217614F60094315F /* EmptyView.swift in Sources */,
 				9305C7F8216F4ABA003FEBFB /* RenderView.swift in Sources */,
@@ -1192,6 +1221,7 @@
 				9305C7D3216EF723003FEBFB /* ConvertedShaders_GLES.swift in Sources */,
 				9305C6F9216CB365003FEBFB /* aw_file.c in Sources */,
 				894DFAF6217614F70094315F /* VideoCell.swift in Sources */,
+				894DFB8C217DB6480094315F /* Image2Mov.m in Sources */,
 				894DFA7E217489090094315F /* Size+Compare.swift in Sources */,
 				894DFAD9217614F60094315F /* Constraints.swift in Sources */,
 				894DFAE1217614F60094315F /* Array+Extensions.swift in Sources */,
